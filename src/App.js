@@ -36,15 +36,14 @@ function App() {
       }
     }
     queryAPI();
+    // eslint-disable-next-line
   },[query]);
 
   let component;
   if(error){
     component = <Error message="No results" />
   }else{
-    <Weather
-      result={result}
-  />
+    component = <Weather result={result} />
   }
 
   return (
