@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './index.css';
+import Header from './components/Header';
 
 function App() {
   return (
-    <div>
-      <h1>Hello!</h1>
-    </div>
+    <Fragment>
+      <Header
+        title='Weather App'
+      />
+    </Fragment>
   );
 }
 
