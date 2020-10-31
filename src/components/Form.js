@@ -1,6 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Form = () => {
+
+    const [search, saveSearch ] = useState({
+        city: '',
+        country: ''
+    });
+
+    const { city, country } = search;
+
+    const handleChange = e => {
+        saveSearch({
+            ...search,
+            [e.target.name] : e.target.value
+        })
+    };
+
     return (
         <form>
             <div className="input-field col s12">
@@ -8,6 +23,8 @@ const Form = () => {
                     type="text"
                     name="city"
                     id="city"
+                    value={city}
+                    onChange={handleChange}
                 />
                 <label htmlFor="city">City: </label>
             </div>
@@ -15,6 +32,8 @@ const Form = () => {
                 <select
                     name="country"
                     id="country"
+                    value="country"
+                    onChange={handleChange}
                 >
                 <option value="">-- Select a country --</option>
                 <option value="US">Estados Unidos</option>
